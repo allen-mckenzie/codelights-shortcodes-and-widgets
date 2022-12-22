@@ -37,7 +37,11 @@ require $cl_dir . 'editors-support/siteorigin/siteorigin.php';
 cl_maybe_load_plugin_textdomain();
 
 // Ajax requests
-if ( is_admin() AND wp_unslash( esc_attr( @$_POST['action'] ) ) !== null AND wp_unslash( esc_attr(  substr( @$_POST['action'], 0, 3 ) ) ) == 'cl_' ) {
+$action = null;
+if( isset( $_REQUEST['action'] ) && $_REQUEST['action'] !== null ) { 
+	$action = wp_parse_args( esc_attr_e( $_REQUEST['action'] ) );
+}
+if ( is_admin() AND wp_unslash( esc_attr( $action ) ) !== null AND wp_unslash( esc_attr(  substr( $action, 0, 3 ) ) ) == 'cl_' ) {
 	require $cl_dir . 'functions/ajax.php';
 }
 
