@@ -1,6 +1,6 @@
 <?php 
 
-if( !defined( ‘ABSPATH’ ) ) {
+if( !defined( 'ABSPATH' ) ) {
 	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 } 
 

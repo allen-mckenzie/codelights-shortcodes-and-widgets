@@ -1,5 +1,5 @@
 <?php
-if( !defined( ‘ABSPATH’ ) ) {
+if( !defined( 'ABSPATH' ) ) {
 	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
@@ -27,7 +27,7 @@ $classes = '';
 $atts = '';
 
 if ( ! empty( $duration ) ) {
-	$atts .= ' data-duration="' . esc_attr( $duration ) . '"';
+	$atts .= ' data-duration=' . $duration;
 }
 
 // Finding numbers positions in both initial and final strings
@@ -61,31 +61,66 @@ foreach ( array( 'initial', 'final' ) as $key ) {
 if ( ! empty( $el_class ) ) {
 	$classes .= ' ' . $el_class;
 }
-
-$output = '<div class="cl-counter' . $classes . '"' . $atts . '>';
-$output .= '<div class="cl-counter-value"';
-$output .= cl_prepare_inline_css( array(
+$output = '';
+ob_start();
+?>
+<div class="cl-counter<?php print( esc_attr_e( $classes ) ); ?>" <?php print( esc_attr_e( $atts ) ); ?> >
+<div class="cl-counter-value"
+<?php
+$inline_css = cl_prepare_inline_css( array(
 	'color' => $value_color,
 	'font-size' => $value_size,
 ) );
-$output .= '>';
+print( esc_attr_e( $inline_css ) );
+?>
+>
+<?php
 
 // Determining if we treat each part as a number or as a letter combination
 for ( $index = 0, $length = count( $pos['initial'] ) - 1; $index < $length; $index++ ) {
 	$part_type = ( $index % 2 ) ? 'number' : 'text';
 	$part_initial = substr( $initial, $pos['initial'][ $index ], $pos['initial'][ $index + 1 ] - $pos['initial'][ $index ] );
 	$part_final = substr( $final, $pos['final'][ $index ], $pos['final'][ $index + 1 ] - $pos['final'][ $index ] );
-	$output .= '<span class="cl-counter-value-part type_' . $part_type . '" data-final="' . esc_attr( $part_final ) . '">' . $part_initial . '</span>';
+	?>
+		<span class="cl-counter-value-part type_<?php print( esc_attr_e( $part_type ) ); ?>" data-final="<?php print( esc_attr_e( $part_final ) ); ?>"><?php print( esc_attr_e( $part_initial ) ); ?></span>
+	<?php
 }
-
-$output .= '</div>';
+?>
+</div>
+<?php
 if ( ! empty( $title ) ) {
-	$output .= '<div class="cl-counter-title"';
-	$output .= cl_prepare_inline_css( array(
+	$counter_content = cl_prepare_inline_css( array(
 		'color' => $title_color,
 		'font-size' => $title_size,
 	) );
-	$output .= '>' . $title . '</div>';
+	?>
+		<div class="cl-counter-title" <?php print( esc_attr_e( $counter_content ) ); ?>><?php print( esc_attr_e( $title ) ); ?> </div>
+	<?php
 }
-$output .= '</div>';
-printf( esc_attr( $output ) );
+?>
+</div>
+<?php
+$allow_html = array(
+	'div' => array(
+		'class' => array(),
+		'data-duration' => array(),
+		'style' => array()
+	),
+	'img' => array(
+		'title' => array(),
+		'src'	=> array(),
+		'alt'	=> array(),
+	),
+	'span' => array(
+		'class' => array(),
+		'data-final' => array()
+	)
+);
+$allow_protocols = array(
+	'data' 	=> array(),
+	'http'	=> array(),
+	'https' => array()
+);
+$output = ob_get_contents();
+ob_end_clean();
+print wp_kses( $output, $allow_html, $allow_protocols );
