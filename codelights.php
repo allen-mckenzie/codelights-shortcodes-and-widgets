@@ -5,7 +5,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 /**
  * Plugin Name: Sidebar Widgets by CodeLights
- * Version: 1.4
+ * Version: 1.4p
  * Plugin URI: http://codelights.com/
  * Description: Flexible high-end shortcodes and widgets. Responsive, modern, SEO-optimized and easy-to-use.
  * Author: CodeLights
