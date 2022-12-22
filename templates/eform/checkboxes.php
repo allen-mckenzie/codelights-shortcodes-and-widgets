@@ -29,4 +29,7 @@ foreach ( $options as $option => $title ) {
 }
 $output .= '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '" />';
 
-print( __( $output ) );
+$output .= '</div>';
+$allow_html = wp_kses_allowed_html( 'post' );
+$allow_protocols = wp_allowed_protocols();
+print( wp_kses( $output, $allow_html, $allow_protocols ) );

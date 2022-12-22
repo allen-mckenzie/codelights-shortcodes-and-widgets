@@ -16,4 +16,7 @@ wp_enqueue_script( 'wp-color-picker-alpha' );
 
 $output = '<input id="' . esc_attr( $id ) . '" type="text" data-default-color="' . esc_attr( $value ) . '" data-alpha="true" name="' . esc_attr( $name ) . '" class="cl-color-picker" value="' . esc_attr( $value ) . '"/>';
 
-print( __( $output ) );
+$output .= '</div>';
+$allow_html = wp_kses_allowed_html( 'post' );
+$allow_protocols = wp_allowed_protocols();
+print( wp_kses( $output, $allow_html, $allow_protocols ) );

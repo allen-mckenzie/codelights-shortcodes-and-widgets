@@ -29,4 +29,7 @@ $output .= '<span class="cl-linkdialog-url">' . $link['url'] . '</span>';
 $output .= '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '">' . esc_textarea( $value ) . '</textarea>';
 $output .= '</div>';
 
-print( __( $output ) );
+$output .= '</div>';
+$allow_html = wp_kses_allowed_html( 'post' );
+$allow_protocols = wp_allowed_protocols();
+print( wp_kses( $output, $allow_html, $allow_protocols ) );
