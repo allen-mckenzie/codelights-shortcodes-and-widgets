@@ -136,6 +136,9 @@ Back-end (editor): Edge, two latest versions of Chrome, Safari, FireFox and Oper
 5. Editing sidebar widget from customizer
 
 == Changelog ==
+= 1.4p =
+* Security: Patches to properly escape and sanitize inputs ( Allen McKenzie )
+
 = 1.4 =
 * Fixed: Renamed the plugin not to mislead users about the SiteOrigin support.
 
