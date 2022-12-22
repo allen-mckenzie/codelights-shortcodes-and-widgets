@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Output element's form html field
@@ -24,8 +27,8 @@ $tinymce_settings = array(
 
 $tinymce_settings = apply_filters( 'cl_tinymce_settings', $tinymce_settings );
 
-echo '<div class="cl-wysiwyg"' . cl_pass_data_to_js( $tinymce_settings ) . '>';
+printf( esc_attr( '<div class="cl-wysiwyg"' . cl_pass_data_to_js( $tinymce_settings ) . '>' ) );
 
 wp_editor( $value, $id, $tinymce_settings );
 
-echo '</div>';
+printf( esc_attr( '</div>' ) );

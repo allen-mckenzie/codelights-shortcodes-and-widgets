@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Output element's form link field
@@ -26,4 +29,4 @@ $output .= '<span class="cl-linkdialog-url">' . $link['url'] . '</span>';
 $output .= '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '">' . esc_textarea( $value ) . '</textarea>';
 $output .= '</div>';
 
-echo $output;
+printf( esc_attr( $output ) );

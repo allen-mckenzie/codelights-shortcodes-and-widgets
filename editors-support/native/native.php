@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 /**
  * Native WordPress editor Shortcode Builder
  */
@@ -26,6 +29,6 @@ function cl_mce_external_plugins( $mce_external_plugins ) {
 add_action( 'admin_print_footer_scripts', 'cl_quicktags_button' );
 function cl_quicktags_button() {
 	if ( wp_script_is( 'quicktags' ) ) {
-		echo '<script id="cl_quicktags">' . file_get_contents( dirname( __FILE__ ) . '/quicktags.js' ) . '</script>';
+		printf( esc_attr( '<script id="cl_quicktags">' . file_get_contents( dirname( __FILE__ ) . '/quicktags.js' ) . '</script>' ) );
 	}
 }

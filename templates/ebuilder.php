@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Output elements builder
@@ -12,10 +15,10 @@ $body = isset( $body ) ? $body : '';
 ?>
 <div class="cl-ebuilder">
 	<div class="cl-ebuilder-header">
-		<div class="cl-ebuilder-title"<?php echo cl_pass_data_to_js($titles) ?>></div>
+		<div class="cl-ebuilder-title"<?php printf( esc_attr( cl_pass_data_to_js($titles)  ) ); ?>></div>
 		<div class="cl-ebuilder-closer">&times;</div>
 	</div>
-	<div class="cl-ebuilder-body"><?php echo $body ?></div>
+	<div class="cl-ebuilder-body"><?php printf( esc_attr( $body ) ); ?></div>
 	<div class="cl-ebuilder-footer">
 		<div class="cl-ebuilder-btn for_close button"><?php _e( 'Close', 'codelights-shortcodes-and-widgets' ) ?></div>
 		<div class="cl-ebuilder-btn for_save button button-primary"><?php _e( 'Save changes', 'codelights-shortcodes-and-widgets' ) ?></div>

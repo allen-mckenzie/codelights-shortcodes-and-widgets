@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Output element's form image/images field
@@ -27,4 +30,4 @@ $output .= '<a href="javascript:void(0)" class="cl-imgattach-add" title="' . $ad
 $output .= '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '" />';
 $output .= '</div>';
 
-echo $output;
+printf( esc_attr( $output ) );

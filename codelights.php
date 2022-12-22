@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Plugin Name: Sidebar Widgets by CodeLights
@@ -34,7 +37,7 @@ require $cl_dir . 'editors-support/siteorigin/siteorigin.php';
 cl_maybe_load_plugin_textdomain();
 
 // Ajax requests
-if ( is_admin() AND isset( $_POST['action'] ) AND substr( $_POST['action'], 0, 3 ) == 'cl_' ) {
+if ( is_admin() && wp_unslash( esc_attr( $_POST['action'] ) ) !== null && wp_unslash( esc_attr(  substr( $_POST['action'], 0, 3 ) ) ) == 'cl_' ) {
 	require $cl_dir . 'functions/ajax.php';
 }
 

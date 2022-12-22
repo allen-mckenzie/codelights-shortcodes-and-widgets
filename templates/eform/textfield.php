@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Output element's form textfield field
@@ -11,4 +14,4 @@
 $output = '<input type="text" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '"';
 $output .= ' value="' . esc_attr( $value ) . '" />';
 
-echo $output;
+printf( esc_attr( $output ) );

@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 /**
  * Load elements list HTML to choose from
@@ -8,7 +11,7 @@ function ajax_cl_get_elist_html() {
 	cl_load_template( 'elist', array() );
 
 	// We don't use JSON to reduce data size
-	die;
+	wp_die("[{'Error':'Doing it wrong.'}]");
 }
 
 /**

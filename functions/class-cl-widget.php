@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 class CL_Widget extends WP_Widget {
 
@@ -12,7 +15,7 @@ class CL_Widget extends WP_Widget {
 
 		if ( ! is_array( $this->config ) OR ! isset( $this->config['params'] ) OR ! is_array( $this->config['params'] ) ) {
 			if ( WP_DEBUG ) {
-				wp_die( 'Config for widget ' . $id_base . ' is not found' );
+				wp_die( 'Config for widget ' . esc_attr( $id_base ) . ' is not found' );
 			}
 
 			return;

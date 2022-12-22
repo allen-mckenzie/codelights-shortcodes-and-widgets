@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+<?php
+if( !defined( ‘ABSPATH’ ) ) {
+	wp_die(__( 'This script cannot be accessed directly.' ) );
+}
 
 add_filter( 'siteorigin_panels_widgets', 'cl_siteorigin_panels_widgets' );
 function cl_siteorigin_panels_widgets( $widgets ) {
@@ -18,18 +21,18 @@ function cl_siteorigin_panels_widgets( $widgets ) {
 }
 
 function cl_siteorigin_icons_style() {
-	echo '<style type="text/css" id="cl_siteorigin_icons_style">';
+	printf( esc_attr( '<style type="text/css" id="cl_siteorigin_icons_style">' ) );
 	foreach ( cl_config( 'elements', array() ) as $name => $elm ) {
 		if ( isset( $elm['icon'] ) AND ! empty( $elm['icon'] ) ) {
-			echo '.so-panels-dialog .widget-icon.icon-' . $name . ' {';
-			echo '-webkit-background-size: 20px 20px;';
-			echo 'background-size: 20px 20px;';
-			echo 'background-image: url(' . $elm['icon'] . ');';
-			echo '}';
+			printf( esc_attr( '.so-panels-dialog .widget-icon.icon-' . $name . ' {' ) );
+			printf( esc_attr( '-webkit-background-size: 20px 20px;' ) );
+			printf( esc_attr( 'background-size: 20px 20px;' ) );
+			printf( esc_attr( 'background-image: url(' . $elm['icon'] . ');' ) );
+			printf( esc_attr( '}' ) );
 		}
 	}
-	echo '}';
-	echo '</style>';
+	printf( esc_attr( '}' ) );
+	printf( esc_attr( '</style>' ) );
 }
 
 add_filter( 'siteorigin_panels_widget_dialog_tabs', 'cl_siteorigin_panels_widget_dialog_tabs', 20 );
