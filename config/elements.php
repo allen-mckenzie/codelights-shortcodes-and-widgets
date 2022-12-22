@@ -1,8 +1,7 @@
-<?php 
-
+<?php
 if( !defined( 'ABSPATH' ) ) {
 	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
-} 
+}
 
 global $cl_uri;
 
