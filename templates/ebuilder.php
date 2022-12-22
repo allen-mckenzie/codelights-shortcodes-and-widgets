@@ -15,7 +15,7 @@ $body = isset( $body ) ? $body : '';
 ?>
 <div class="cl-ebuilder">
 	<div class="cl-ebuilder-header">
-		<div class="cl-ebuilder-title"<?php print( cl_pass_data_to_js($titles) ); ?>></div>
+		<div class="cl-ebuilder-title"<?php print( __( cl_pass_data_to_js( $titles ) ) ); ?>></div>
 		<div class="cl-ebuilder-closer">&times;</div>
 	</div>
 	<div class="cl-ebuilder-body"><?php print( __( $body ) ); ?></div>
