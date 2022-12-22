@@ -41,5 +41,5 @@ function ajax_cl_get_ebuilder_html() {
 //	wp_print_scripts();
 
 	// We don't use JSON to reduce data size
-	die;
+	wp_die( esc_attr_e( '[{"Error":"Doing it wrong."}]' ) );
 }

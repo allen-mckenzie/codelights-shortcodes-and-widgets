@@ -15,7 +15,7 @@ class CL_Widget extends WP_Widget {
 
 		if ( ! is_array( $this->config ) OR ! isset( $this->config['params'] ) OR ! is_array( $this->config['params'] ) ) {
 			if ( WP_DEBUG ) {
-				wp_die( 'Config for widget ' . $id_base . ' is not found' );
+				wp_die( esc_attr_e( 'Config for widget ' . $id_base . ' is not found' ) );
 			}
 
 			return;

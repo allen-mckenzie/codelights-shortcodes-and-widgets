@@ -18,7 +18,7 @@ $body = isset( $body ) ? $body : '';
 		<div class="cl-ebuilder-title"<?php print( cl_pass_data_to_js($titles) ); ?>></div>
 		<div class="cl-ebuilder-closer">&times;</div>
 	</div>
-	<div class="cl-ebuilder-body"><?php print( $body ); ?></div>
+	<div class="cl-ebuilder-body"><?php print( __( $body ) ); ?></div>
 	<div class="cl-ebuilder-footer">
 		<div class="cl-ebuilder-btn for_close button"><?php esc_attr_e( 'Close', 'codelights-shortcodes-and-widgets' ) ?></div>
 		<div class="cl-ebuilder-btn for_save button button-primary"><?php esc_attr_e( 'Save changes', 'codelights-shortcodes-and-widgets' ) ?></div>
