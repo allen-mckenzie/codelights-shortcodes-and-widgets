@@ -1,6 +1,6 @@
 <?php
 if( !defined( ‘ABSPATH’ ) ) {
-	wp_die(__( 'This script cannot be accessed directly.' ) );
+	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
 /**
@@ -20,7 +20,7 @@ $body = isset( $body ) ? $body : '';
 	</div>
 	<div class="cl-ebuilder-body"><?php printf( esc_attr( $body ) ); ?></div>
 	<div class="cl-ebuilder-footer">
-		<div class="cl-ebuilder-btn for_close button"><?php _e( 'Close', 'codelights-shortcodes-and-widgets' ) ?></div>
-		<div class="cl-ebuilder-btn for_save button button-primary"><?php _e( 'Save changes', 'codelights-shortcodes-and-widgets' ) ?></div>
+		<div class="cl-ebuilder-btn for_close button"><?php esc_attr_e( 'Close', 'codelights-shortcodes-and-widgets' ) ?></div>
+		<div class="cl-ebuilder-btn for_save button button-primary"><?php esc_attr_e( 'Save changes', 'codelights-shortcodes-and-widgets' ) ?></div>
 	</div>
 </div>

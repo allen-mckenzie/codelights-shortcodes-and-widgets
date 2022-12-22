@@ -1,6 +1,6 @@
 <?php
 if( !defined( ‘ABSPATH’ ) ) {
-	wp_die(__( 'This script cannot be accessed directly.' ) );
+	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
 /**
@@ -114,6 +114,6 @@ if ( count( $groups ) > 1 ) {
 }
 $output .= '</div></div>';
 
-echo $output;
+printf( esc_attr( $output ) );
 
 

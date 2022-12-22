@@ -1,6 +1,6 @@
 <?php
 if( !defined( ‘ABSPATH’ ) ) {
-	wp_die(__( 'This script cannot be accessed directly.' ) );
+	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
 /**
@@ -190,4 +190,4 @@ $output .= '</' . $tag . '>';
 
 $output .= $custom_css;
 
-echo $output;
+printf( esc_attr( $output ) );

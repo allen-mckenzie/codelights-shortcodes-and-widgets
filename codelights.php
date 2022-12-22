@@ -1,6 +1,6 @@
 <?php
 if( !defined( ‘ABSPATH’ ) ) {
-	wp_die(__( 'This script cannot be accessed directly.' ) );
+	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
 /**
@@ -106,17 +106,17 @@ function cl_enqueue_forms_assets() {
 
 add_action( 'customize_controls_print_styles', 'cl_customizer_icons_style' );
 function cl_customizer_icons_style() {
-	echo '<style type="text/css" id="cl_customizer_icons_style">';
+	printf( esc_attr( '<style type="text/css" id="cl_customizer_icons_style">' ) );
 	foreach ( cl_config( 'elements', array() ) as $name => $elm ) {
 		if ( isset( $elm['icon'] ) AND ! empty( $elm['icon'] ) ) {
-			echo '#available-widgets .widget-tpl[class*=" ' . $name . '"] .widget-title::before {';
-			echo 'content: \'\';';
-			echo '-webkit-background-size: 20px 20px;';
-			echo 'background-size: 20px 20px;';
-			echo 'background-image: url(' . $elm['icon'] . ');';
-			echo '}';
+			printf( esc_attr( '#available-widgets .widget-tpl[class*=" ' . $name . '"] .widget-title::before {' ) );
+			printf( esc_attr( 'content: \'\';' ) );
+			printf( esc_attr( '-webkit-background-size: 20px 20px;' ) );
+			printf( esc_attr( 'background-size: 20px 20px;' ) );
+			printf( esc_attr( 'background-image: url(' . $elm['icon'] . ');' ) );
+			printf( esc_attr( '}' ) );
 		}
 	}
-	echo '}';
-	echo '</style>';
+	printf( esc_attr( '}' ) );
+	printf( esc_attr( '</style>' ) );
 }

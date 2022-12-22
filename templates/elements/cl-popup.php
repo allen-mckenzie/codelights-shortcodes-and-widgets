@@ -1,6 +1,6 @@
 <?php
 if( !defined( ‘ABSPATH’ ) ) {
-	wp_die(__( 'This script cannot be accessed directly.' ) );
+	wp_die( esc_attr( 'This script cannot be accessed directly.' ) );
 }
 
 /**
@@ -119,4 +119,4 @@ $output .= '</div>'; // .cl-popup-wrap
 
 $output .= '</div>'; // .cl-popup
 
-echo $output;
+printf( esc_attr( $output ) );
