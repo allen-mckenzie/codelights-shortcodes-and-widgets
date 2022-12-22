@@ -28,14 +28,7 @@ function cl_mce_external_plugins( $mce_external_plugins ) {
 
 add_action( 'admin_print_footer_scripts', 'cl_quicktags_button' );
 function cl_quicktags_button() {
-	$output = null;
 	if ( wp_script_is( 'quicktags' ) ) {
-		?>
-			<script id="cl_quicktags">
-		<?php
-		$output = ( esc_html( file_get_contents( dirname( __FILE__ ) . '/quicktags.js' ) ) );
-		?>
-			</script>
-		<?php
+		print( esc_attr_e( '<script id="cl_quicktags">' . file_get_contents( dirname( __FILE__ ) . '/quicktags.js' ) . '</script>' ) );
 	}
 }

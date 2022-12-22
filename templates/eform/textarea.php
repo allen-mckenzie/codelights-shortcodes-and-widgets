@@ -15,4 +15,7 @@ $output = '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . 
 $output .= esc_textarea( $value );
 $output .= '</textarea>';
 
-print( esc_attr_e( $output ) );
+$output .= '</div>';
+$allow_html = wp_kses_allowed_html( 'post' );
+$allow_protocols = wp_allowed_protocols();
+print( wp_kses( $output, $allow_html, $allow_protocols ) );

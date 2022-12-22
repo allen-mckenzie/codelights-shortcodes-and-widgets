@@ -244,4 +244,7 @@ if ( $animation == 'cubeflip' AND in_array( $direction, array( 'ne', 'se', 'sw',
 $output .= '</div></div>';
 $output .= '</' . $tag . '>';
 
-print( esc_attr_e( $output ) );
+$output .= '</div>';
+$allow_html = wp_kses_allowed_html( 'post' );
+$allow_protocols = wp_allowed_protocols();
+print( wp_kses( $output, $allow_html, $allow_protocols ) );

@@ -11,7 +11,7 @@ function ajax_cl_get_elist_html() {
 	cl_load_template( 'elist', array() );
 
 	// We don't use JSON to reduce data size
-	wp_die("[{'Error':'Doing it wrong.'}]");
+	die;
 }
 
 /**
