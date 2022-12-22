@@ -244,4 +244,4 @@ if ( $animation == 'cubeflip' AND in_array( $direction, array( 'ne', 'se', 'sw',
 $output .= '</div></div>';
 $output .= '</' . $tag . '>';
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );

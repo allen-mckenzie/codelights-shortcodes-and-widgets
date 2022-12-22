@@ -29,5 +29,5 @@ foreach ( $elements as $name => $elm ) {
 }
 $output .= '</ul></div></div>';
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );
 

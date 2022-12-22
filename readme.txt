@@ -3,7 +3,7 @@ Contributors: rsukhar
 Tags: shortcodes, shortcode, widget, widgets, responsive, page, admin, banner, counter, flipbox, animation, sidebar
 Requires at least: 4.0
 Tested up to: 4.8.1
-Stable tag: 1.4p
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,9 +136,6 @@ Back-end (editor): Edge, two latest versions of Chrome, Safari, FireFox and Oper
 5. Editing sidebar widget from customizer
 
 == Changelog ==
-= 1.4p =
-* Security: Patches to properly escape and sanitize inputs ( Allen McKenzie )
-
 = 1.4 =
 * Fixed: Renamed the plugin not to mislead users about the SiteOrigin support.
 

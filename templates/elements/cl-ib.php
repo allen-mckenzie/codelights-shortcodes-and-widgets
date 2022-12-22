@@ -121,4 +121,4 @@ $output .= '</' . $tag . '>';
 
 $output .= $custom_css;
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );

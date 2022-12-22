@@ -29,4 +29,4 @@ $output .= '<span class="cl-linkdialog-url">' . $link['url'] . '</span>';
 $output .= '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '">' . esc_textarea( $value ) . '</textarea>';
 $output .= '</div>';
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );

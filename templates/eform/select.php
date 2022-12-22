@@ -22,4 +22,4 @@ foreach ( $options as $option => $title ) {
 }
 $output .= '</select>';
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );

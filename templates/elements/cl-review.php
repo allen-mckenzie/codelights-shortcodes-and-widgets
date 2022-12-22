@@ -120,4 +120,4 @@ $output .= $author_html;
 
 $output .= '</div></div>';
 
-print( esc_attr_e( $output ) );
+print( __( $output ) );
