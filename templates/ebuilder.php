@@ -15,10 +15,10 @@ $body = isset( $body ) ? $body : '';
 ?>
 <div class="cl-ebuilder">
 	<div class="cl-ebuilder-header">
-		<div class="cl-ebuilder-title"<?php printf( esc_attr( cl_pass_data_to_js($titles)  ) ); ?>></div>
+		<div class="cl-ebuilder-title"<?php print( esc_attr_e( cl_pass_data_to_js($titles)  ) ); ?>></div>
 		<div class="cl-ebuilder-closer">&times;</div>
 	</div>
-	<div class="cl-ebuilder-body"><?php printf( esc_attr( $body ) ); ?></div>
+	<div class="cl-ebuilder-body"><?php print( esc_attr_e( $body ) ); ?></div>
 	<div class="cl-ebuilder-footer">
 		<div class="cl-ebuilder-btn for_close button"><?php esc_attr_e( 'Close', 'codelights-shortcodes-and-widgets' ) ?></div>
 		<div class="cl-ebuilder-btn for_save button button-primary"><?php esc_attr_e( 'Save changes', 'codelights-shortcodes-and-widgets' ) ?></div>

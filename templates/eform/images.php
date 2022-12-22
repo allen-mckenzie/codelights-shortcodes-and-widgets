@@ -30,4 +30,4 @@ $output .= '<a href="javascript:void(0)" class="cl-imgattach-add" title="' . $ad
 $output .= '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '" />';
 $output .= '</div>';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );

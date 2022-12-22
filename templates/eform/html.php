@@ -27,8 +27,8 @@ $tinymce_settings = array(
 
 $tinymce_settings = apply_filters( 'cl_tinymce_settings', $tinymce_settings );
 
-printf( esc_attr( '<div class="cl-wysiwyg"' . cl_pass_data_to_js( $tinymce_settings ) . '>' ) );
+print( esc_attr_e( '<div class="cl-wysiwyg"' . cl_pass_data_to_js( $tinymce_settings ) . '>' ) );
 
 wp_editor( $value, $id, $tinymce_settings );
 
-printf( esc_attr( '</div>' ) );
+print( esc_attr_e( '</div>' ) );

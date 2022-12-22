@@ -114,6 +114,6 @@ if ( count( $groups ) > 1 ) {
 }
 $output .= '</div></div>';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );
 
 

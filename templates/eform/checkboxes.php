@@ -29,4 +29,4 @@ foreach ( $options as $option => $title ) {
 }
 $output .= '<input type="hidden" name="' . esc_attr( $name ) . '" value="' . esc_attr( $value ) . '" />';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );

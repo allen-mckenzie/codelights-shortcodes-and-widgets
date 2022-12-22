@@ -16,4 +16,4 @@ wp_enqueue_script( 'wp-color-picker-alpha' );
 
 $output = '<input id="' . esc_attr( $id ) . '" type="text" data-default-color="' . esc_attr( $value ) . '" data-alpha="true" name="' . esc_attr( $name ) . '" class="cl-color-picker" value="' . esc_attr( $value ) . '"/>';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );

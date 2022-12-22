@@ -69,13 +69,13 @@ class CL_Widget extends WP_Widget {
 	 * @param array $instance The settings for the particular instance of the widget.
 	 */
 	public function widget( $args, $instance ) {
-		printf( esc_attr( $args['before_widget'] ) );
+		print( esc_attr_e( $args['before_widget'] ) );
 		if ( isset( $instance['_widget_title'] ) AND ! empty( $instance['_widget_title'] ) ) {
-			printf( esc_attr( $args['before_title'] . $instance['_widget_title'] . $args['after_title'] ) );
+			print( esc_attr_e( $args['before_title'] . $instance['_widget_title'] . $args['after_title'] ) );
 		}
 		$instance = cl_shortcode_atts( $instance, $this->id_base );
 		cl_load_template( 'elements/' . $this->id_base, $instance );
-		printf( esc_attr( $args['after_widget'] ) );
+		print( esc_attr_e( $args['after_widget'] ) );
 	}
 
 }

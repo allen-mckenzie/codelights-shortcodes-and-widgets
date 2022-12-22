@@ -15,4 +15,4 @@ $output = '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . 
 $output .= esc_textarea( $value );
 $output .= '</textarea>';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );

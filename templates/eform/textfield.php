@@ -14,4 +14,4 @@ if( !defined( 'ABSPATH' ) ) {
 $output = '<input type="text" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '"';
 $output .= ' value="' . esc_attr( $value ) . '" />';
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );

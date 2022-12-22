@@ -110,17 +110,17 @@ function cl_enqueue_forms_assets() {
 
 add_action( 'customize_controls_print_styles', 'cl_customizer_icons_style' );
 function cl_customizer_icons_style() {
-	printf( esc_attr( '<style type="text/css" id="cl_customizer_icons_style">' ) );
+	print( esc_attr_e( '<style type="text/css" id="cl_customizer_icons_style">' ) );
 	foreach ( cl_config( 'elements', array() ) as $name => $elm ) {
 		if ( isset( $elm['icon'] ) AND ! empty( $elm['icon'] ) ) {
-			printf( esc_attr( '#available-widgets .widget-tpl[class*=" ' . $name . '"] .widget-title::before {' ) );
-			printf( esc_attr( 'content: \'\';' ) );
-			printf( esc_attr( '-webkit-background-size: 20px 20px;' ) );
-			printf( esc_attr( 'background-size: 20px 20px;' ) );
-			printf( esc_attr( 'background-image: url(' . $elm['icon'] . ');' ) );
-			printf( esc_attr( '}' ) );
+			print( esc_attr_e( '#available-widgets .widget-tpl[class*=" ' . $name . '"] .widget-title::before {' ) );
+			print( esc_attr_e( 'content: \'\';' ) );
+			print( esc_attr_e( '-webkit-background-size: 20px 20px;' ) );
+			print( esc_attr_e( 'background-size: 20px 20px;' ) );
+			print( esc_attr_e( 'background-image: url(' . $elm['icon'] . ');' ) );
+			print( esc_attr_e( '}' ) );
 		}
 	}
-	printf( esc_attr( '}' ) );
-	printf( esc_attr( '</style>' ) );
+	print( esc_attr_e( '}' ) );
+	print( esc_attr_e( '</style>' ) );
 }

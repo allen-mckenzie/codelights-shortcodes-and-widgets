@@ -21,18 +21,18 @@ function cl_siteorigin_panels_widgets( $widgets ) {
 }
 
 function cl_siteorigin_icons_style() {
-	printf( esc_attr( '<style type="text/css" id="cl_siteorigin_icons_style">' ) );
+	print( esc_attr_e( '<style type="text/css" id="cl_siteorigin_icons_style">' ) );
 	foreach ( cl_config( 'elements', array() ) as $name => $elm ) {
 		if ( isset( $elm['icon'] ) AND ! empty( $elm['icon'] ) ) {
-			printf( esc_attr( '.so-panels-dialog .widget-icon.icon-' . $name . ' {' ) );
-			printf( esc_attr( '-webkit-background-size: 20px 20px;' ) );
-			printf( esc_attr( 'background-size: 20px 20px;' ) );
-			printf( esc_attr( 'background-image: url(' . $elm['icon'] . ');' ) );
-			printf( esc_attr( '}' ) );
+			print( esc_attr_e( '.so-panels-dialog .widget-icon.icon-' . $name . ' {' ) );
+			print( esc_attr_e( '-webkit-background-size: 20px 20px;' ) );
+			print( esc_attr_e( 'background-size: 20px 20px;' ) );
+			print( esc_attr_e( 'background-image: url(' . $elm['icon'] . ');' ) );
+			print( esc_attr_e( '}' ) );
 		}
 	}
-	printf( esc_attr( '}' ) );
-	printf( esc_attr( '</style>' ) );
+	print( esc_attr_e( '}' ) );
+	print( esc_attr_e( '</style>' ) );
 }
 
 add_filter( 'siteorigin_panels_widget_dialog_tabs', 'cl_siteorigin_panels_widget_dialog_tabs', 20 );

@@ -119,4 +119,4 @@ $output .= '</div>'; // .cl-popup-wrap
 
 $output .= '</div>'; // .cl-popup
 
-printf( esc_attr( $output ) );
+print( esc_attr_e( $output ) );
